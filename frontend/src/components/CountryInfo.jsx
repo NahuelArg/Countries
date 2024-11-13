@@ -31,7 +31,6 @@ function CountryInfo() {
 
   return (
     <div className="country-info-container">
-      <button onClick={() => navigate(-1)} className="back-button">Back</button>
       <h1>{countryInfo.countryCode}</h1>
       <img src={countryInfo.flag} alt={`${countryInfo.countryCode} flag`} className="country-flag" />
 
@@ -74,6 +73,8 @@ function CountryInfo() {
       ) : (
         <p>No population data available for {countryInfo.countryCode}</p>
       )}
+            <button onClick={() => navigate(-1)} className="back-button">Back</button>
+
     </div>
   );
 }
