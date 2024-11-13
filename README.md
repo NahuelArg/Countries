@@ -50,19 +50,22 @@ This project is a web application that allows users to explore detailed informat
 
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
-   cd <repo-directory>
-- Navigate to the frontend directory and install dependencies:
+   git clone (https://github.com/NahuelArg/Countries.git)
+   cd DevelopsToday/frontend
+2. Navigate to the frontend directory and install dependencies:
 cd frontend
 npm install
-Start the frontend server:
+3.Start the frontend server:
 npm start
-- Navigate to the backend directory:
+### Backend Setup
+1.Navigate to the backend directory:
 cd backend
-- Install the backend dependencies:
-  *npm install
-Create a .env file in the backend directory and add your environment variables (such as API URLs):
--Start the backend server:
+2.Install the backend dependencies:
+  npm install
+3.Create a .env file in the backend directory and add your environment variables (such as API URLs):
+API_KEY_NAGER_DATE=your_api_key_here
+API_KEY_COUNTRIESNOW=your_api_key_here
+4.Start the backend server:
 npm start
 The backend will now be running on http://localhost:3001 and the frontend on http://localhost:3000.
 API Endpoints
@@ -73,17 +76,30 @@ Description: Fetches information for a specific country, including borders, popu
 Parameters:
   countryCode: ISO 3-letter country code (e.g., USA for the United States).
 Response:
-  JSON object containing:
-    countryCode: Country code.
-    borders: List of countries bordering the specified country.
-    population: Population data (if available).
-    flag: URL of the country’s flag.
+  {
+  "countryCode": "USA",
+  "borders": ["CAN", "MEX"],
+  "population": 331002651,
+  "flag": "https://example.com/flag_usa.png"
+}
+.
 
 Get List of Countries
 Route: GET /api/countries
 Description: Fetches a list of all available countries.
 Response:
-  JSON array containing country names and ISO 2-letter country codes.
+  [
+  {
+    "name": "United States",
+    "countryCode": "USA"
+  },
+  {
+    "name": "Canada",
+    "countryCode": "CAN"
+  },
+  // more countries...
+]
+
 
 Usage
 Once both the backend and frontend servers are running:
