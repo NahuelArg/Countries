@@ -75,30 +75,27 @@ Route: GET /api/country/:countryCode
 Description: Fetches information for a specific country, including borders, population data, and flag.
 Parameters:
   countryCode: ISO 3-letter country code (e.g., USA for the United States).
+
+```markdown
 Response:
-  {
-  "countryCode": "USA",
-  "borders": ["CAN", "MEX"],
-  "population": 331002651,
-  "flag": "https://example.com/flag_usa.png"
-}
-.
+
+| Key         | Value                                                                 |
+|-------------|-----------------------------------------------------------------------|
+| countryCode | USA                                                                   |
+| borders     | CAN, MEX                                                              |
+| population  | 331,002,651                                                           |
+| flag        | ![USA Flag](https://example.com/flag_usa.png)                         |
+
 
 Get List of Countries
 Route: GET /api/countries
 Description: Fetches a list of all available countries.
 Response:
-  [
-  {
-    "name": "United States",
-    "countryCode": "USA"
-  },
-  {
-    "name": "Canada",
-    "countryCode": "CAN"
-  },
-  // more countries...
-]
+
+- **United States** (Country Code: USA)
+- **Canada** (Country Code: CAN)
+- More countries...
+
 
 
 Usage
